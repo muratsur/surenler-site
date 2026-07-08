@@ -66,6 +66,7 @@
   .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
   .video-card { background: var(--surface); border-radius: 10px; overflow: hidden; }
   .video-card .frame { position: relative; padding-top: 56.25%; }
+  .video-card .frame.portrait { padding-top: 145%; }
   .video-card iframe {
     position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
   }
@@ -126,6 +127,12 @@
       <div class="stat"><strong>48h</strong><span>typical delivery</span></div>
     </div>
     <div class="videos">
+      <div class="video-card">
+        <div class="frame portrait">
+          <iframe src="https://www.youtube-nocookie.com/embed/vDVVGwZbTWE" title="Real estate listing video — client-style sample" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <p>Client-style sample — real estate listing video: hook, captions, branded end card. This is the deliverable.</p>
+      </div>
       <div class="video-card">
         <div class="frame">
           <iframe src="https://www.youtube-nocookie.com/embed/WXdYv-9PhH0" title="The Anakim — narrated long-form sample" loading="lazy" allowfullscreen></iframe>
