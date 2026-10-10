@@ -1051,7 +1051,161 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
+  
+    /* ==========================================================================
+       Coming Soon & Pipeline Styles
+       ========================================================================== */
+    .coming-soon-section {
+      background: linear-gradient(180deg, rgba(10, 13, 20, 0.6) 0%, rgba(15, 20, 31, 0.9) 100%);
+      border-top: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .tag-pill.coming-soon {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent);
+      border-color: rgba(245, 158, 11, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .tag-pill.active-dev {
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--cyan-accent);
+      border-color: rgba(6, 182, 212, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .tag-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 8px currentColor;
+    }
+
+    .tech-stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .tech-badge {
+      font-family: 'JetBrains Mono', monospace, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* POS Interactive Visual Banner */
+    .pos-banner-mockup {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 20%, #151d2a 0%, #0d121c 100%);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .pos-banner-mockup::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 16px);
+      pointer-events: none;
+    }
+
+    .pos-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      z-index: 1;
+    }
+
+    .pos-sync-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .pos-grid-preview {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 12px;
+      margin: 8px 0;
+      z-index: 1;
+    }
+
+    .pos-order-items {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .pos-item-line {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 5px 9px;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-main);
+    }
+
+    .pos-total-display {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .pos-total-amount {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+
+    .pos-footer-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--cyan-accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 1;
+    }
+
+</style>
 
   <!-- Structured Data JSON-LD -->
   <script type="application/ld+json">
@@ -1419,6 +1573,251 @@
         </div>
       </div>
     </section>
+
+    <!-- ==========================================================================
+         WHAT'S COMING SOON SECTION (Pipeline & Upcoming Releases)
+         ========================================================================== -->
+    <section id="coming-soon" class="coming-soon-section">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="section-eyebrow">Studio Pipeline &bull; 2026 Roadmap</span>
+          <h2 class="section-title">What's Coming Soon</h2>
+          <p class="section-desc">
+            Next-generation games and intelligent software systems currently in active development across Unreal Engine 5, Unity 6, mobile, and web.
+          </p>
+        </div>
+
+        <div class="games-grid">
+
+          <!-- 1. RoadRageUnity -->
+          <article class="game-card" id="project-roadrage-unity">
+            <div class="game-media">
+              <img src="assets/road-rage-unity-banner.jpg" alt="Road Rage Unity preview" class="game-banner" loading="lazy" width="600" height="315">
+              <div class="game-media-overlay"></div>
+            </div>
+
+            <div class="game-header">
+              <div class="game-icon-frame">
+                <img src="assets/road-rage-icon.png" alt="Road Rage icon" class="game-icon" width="82" height="82">
+              </div>
+              <div>
+                <div class="game-meta-pills">
+                  <span class="tag-pill coming-soon"><span class="tag-pill-dot"></span>Coming Soon</span>
+                  <span class="tag-pill">Unity 6</span>
+                  <span class="tag-pill">PC &amp; Console</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-body">
+              <h3 class="game-title">Road Rage: Pursuit (Unity 6)</h3>
+              <p class="game-subtitle">High-octane vehicular combat &amp; tactical pursuit</p>
+              <p class="game-desc">
+                The evolutionary leap of Road Rage rebuilt from the chassis up in Unity 6. Relentless high-speed pursuits, tactical cop takedowns, kinetic ramming physics, and dynamic urban street traffic.
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Tactical PIT maneuvers &amp; kinetic vehicle collision physics</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Escalating multi-tier police pursuit AI and roadblock tactics</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Destructible environments and reactive street traffic systems</span>
+                </li>
+              </ul>
+
+              <div class="tech-stack-row">
+                <span class="tech-badge">Unity 6</span>
+                <span class="tech-badge">C#</span>
+                <span class="tech-badge">PhysX</span>
+                <span class="tech-badge">Cinemachine</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. RestaurantPOS -->
+          <article class="game-card" id="project-restaurant-pos">
+            <div class="game-media">
+              <div class="pos-banner-mockup">
+                <div class="pos-header-row">
+                  <span>TERMINAL // 01 &bull; MAIN DINING</span>
+                  <span class="pos-sync-indicator"><span class="tag-pill-dot"></span>LOCAL-FIRST PEER SYNC</span>
+                </div>
+                <div class="pos-grid-preview">
+                  <div class="pos-order-items">
+                    <div class="pos-item-line"><span>Smash Burger + Truffle</span><strong>$14.50</strong></div>
+                    <div class="pos-item-line"><span>Garlic Parmesan Fries</span><strong>$5.00</strong></div>
+                    <div class="pos-item-line"><span>Cold Brew Nitro</span><strong>$4.25</strong></div>
+                  </div>
+                  <div class="pos-total-display">
+                    <span style="font-size:0.7rem; color:var(--text-dim)">TOTAL</span>
+                    <span class="pos-total-amount">$23.75</span>
+                  </div>
+                </div>
+                <div class="pos-footer-status">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>KDS ROUTED &bull; TABLE 04 &bull; ZERO LATENCY</span>
+                </div>
+              </div>
+              <div class="game-media-overlay"></div>
+            </div>
+
+            <div class="game-header">
+              <div class="game-icon-frame" style="background: radial-gradient(circle, #1a2232, #0d121c); display: flex; align-items: center; justify-content: center;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <div>
+                <div class="game-meta-pills">
+                  <span class="tag-pill active-dev"><span class="tag-pill-dot"></span>In Active Dev</span>
+                  <span class="tag-pill">Local-First</span>
+                  <span class="tag-pill">Web / Desktop</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-body">
+              <h3 class="game-title">Restaurant POS &amp; KDS</h3>
+              <p class="game-subtitle">Intelligent offline-first point of sale &amp; kitchen display</p>
+              <p class="game-desc">
+                High-performance restaurant point of sale built for speed and reliability. Rapid order entry, modifier matrices, thermal printing, and multi-terminal peer synchronization with zero cloud downtime.
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>100% offline persistence powered by IndexedDB &amp; Dexie</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Real-time peer-to-peer sync between front tills &amp; kitchen displays</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>800+ test suite ensuring exact financial math &amp; split billing</span>
+                </li>
+              </ul>
+
+              <div class="tech-stack-row">
+                <span class="tech-badge">React 19</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Dexie / IndexedDB</span>
+                <span class="tech-badge">PWA</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. inspection-station -->
+          <article class="game-card" id="project-inspection-station">
+            <div class="game-media">
+              <img src="assets/inspection-station-banner.jpg" alt="Inspection Station preview" class="game-banner" loading="lazy" width="600" height="315">
+              <div class="game-media-overlay"></div>
+            </div>
+
+            <div class="game-header">
+              <div class="game-icon-frame" style="background: radial-gradient(circle, #2d1810, #140b08); display: flex; align-items: center; justify-content: center;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              </div>
+              <div>
+                <div class="game-meta-pills">
+                  <span class="tag-pill coming-soon"><span class="tag-pill-dot"></span>Coming Soon</span>
+                  <span class="tag-pill">Unreal Engine 5</span>
+                  <span class="tag-pill">PC (Steam)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-body">
+              <h3 class="game-title">Inspection Station</h3>
+              <p class="game-subtitle">Vehicle checkpoint &amp; border inspection simulator</p>
+              <p class="game-desc">
+                Papers, Please meets the automotive service bay. Walk the inspection pit, crawl wheel arches, inspect suspicious chassis modifications, verify VINs against shipping manifests, and uncover smuggling contraband in photoreal Unreal Engine 5 detail.
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Detailed vehicle component disassembly: doors, trunks, cabins, &amp; wheels</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Contraband concealment, cloned VIN stamps, &amp; illegal modifications</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>High-stakes bureaucratic verdicts: Impound or pass before strikes accumulate</span>
+                </li>
+              </ul>
+
+              <div class="tech-stack-row">
+                <span class="tech-badge">Unreal Engine 5</span>
+                <span class="tech-badge">Lumen &amp; Nanite</span>
+                <span class="tech-badge">Chaos Physics</span>
+                <span class="tech-badge">C++</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. REPS -->
+          <article class="game-card" id="project-reps-fitness">
+            <div class="game-media" style="background:#090d14; display:flex; align-items:center; justify-content:center;">
+              <img src="assets/reps-icon.jpg" alt="REPS fitness logo" class="game-banner" style="object-fit:contain; max-height:85%; width:auto;" loading="lazy">
+              <div class="game-media-overlay"></div>
+            </div>
+
+            <div class="game-header">
+              <div class="game-icon-frame">
+                <img src="assets/reps-icon.jpg" alt="REPS fitness app icon" class="game-icon" width="82" height="82">
+              </div>
+              <div>
+                <div class="game-meta-pills">
+                  <span class="tag-pill coming-soon"><span class="tag-pill-dot"></span>Coming Soon</span>
+                  <span class="tag-pill">Mobile Fitness</span>
+                  <span class="tag-pill">iOS &amp; Android</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="game-body">
+              <h3 class="game-title">REPS — Minimalist Training</h3>
+              <p class="game-subtitle">No tracking. Just training.</p>
+              <p class="game-desc">
+                A privacy-first mobile workout companion. Zero account creation, zero tracking telemetry. High-intensity bodyweight routines, kettlebell EMOM timers, and pull-up/push-up ladder challenges.
+              </p>
+
+              <ul class="feature-list">
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Strictly zero data harvesting ΓÇö all workouts stay local on your device</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Background-safe timestamp timers for EMOM, AMRAP &amp; rest intervals</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Multilingual audio coaching cues (English, German, Turkish) &amp; offline PWA</span>
+                </li>
+              </ul>
+
+              <div class="tech-stack-row">
+                <span class="tech-badge">Capacitor 8</span>
+                <span class="tech-badge">Vite</span>
+                <span class="tech-badge">iOS &amp; Android</span>
+                <span class="tech-badge">Offline PWA</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- ==========================================================================
          MEDIA & VIDEO PRODUCTION SECTION (Preserving existing business)
